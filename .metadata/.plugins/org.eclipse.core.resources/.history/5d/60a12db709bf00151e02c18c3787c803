@@ -19,7 +19,7 @@ public class NavigateToAUrl {
 		WebElement login = driver.findElement(By.name("login"));
 		WebElement password = driver.findElement(By.name("password"));
 		login.sendKeys("rlsmall56");
-		password.sendKeys("password");
+		password.sendKeys("Levi5656");
 		WebElement loginbtn = driver.findElement(By.name("login-submit"));
 		loginbtn.click();
 		WebElement UserbarRt = driver.findElement(By.id("userbar_right"));
