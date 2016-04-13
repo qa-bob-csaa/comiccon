@@ -2,12 +2,14 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="com.b2c.seleniumtests"/>
 			<item value="com.demoapp.seleniumtests"/>
 		</list>
 		<list key="name">
 			<item value="TextBox_Demo"/>
 		</list>
 		<list key="artifactId">
+			<item value="com.b2c.seleniumtests"/>
 			<item value="textboxes"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -46,6 +48,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\gn11sma\Documents\GitHub\comiccon\Learning-Selenium"/>
 			<item value="C:\Users\gn11sma\Documents\GitHub\comiccon"/>
 		</list>
 		<list key="projectNameTemplate">

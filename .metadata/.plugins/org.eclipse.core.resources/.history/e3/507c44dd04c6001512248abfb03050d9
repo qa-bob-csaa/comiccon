@@ -1,0 +1,72 @@
+package com.packt.webdriver.chapter1;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+//import org.openqa.selenium.chrome.*;
+//import org.openqa.selenium.ie.*;
+
+public class TestComicon {
+	public static void main(String[] args) {
+		WebDriver driver = NavigateToAUrl();
+		buynav(driver);
+		loginnav(driver);
+		homenav(driver);
+		guestnav(driver);
+		login(driver);
+//		logout(driver);
+//		driver.close();
+	}
+	private static WebDriver NavigateToAUrl () {
+		WebDriver driver = new FirefoxDriver();
+		driver.get("http://www.phoenixcomicon.com");
+		Assert.assertTrue(driver.getCurrentUrl().contains("phoenixcomicon"));
+		return driver;
+	}
+	
+		public static void loginnav(WebDriver driver) {
+			WebElement Navbar = driver.findElement(By.id("ul_main_menu"));
+			WebElement Loginlink = Navbar.findElement(By.linkText("Login"));
+			Loginlink.click();
+			Assert.assertTrue(driver.getCurrentUrl().contains("login"));
+		}
+		public static void homenav(WebDriver driver) {
+			WebElement Navbar = driver.findElement(By.id("ul_main_menu"));
+			WebElement Homelink = Navbar.findElement(By.linkText("Home"));
+			Homelink.click();
+			Assert.assertTrue(driver.getCurrentUrl().contains("page/1"));
+		}
+		public static void buynav(WebDriver driver) {
+			WebElement Navbar = driver.findElement(By.id("ul_main_menu"));
+			WebElement Buylink = Navbar.findElement(By.linkText("Buy"));
+			Buylink.click();
+			Assert.assertTrue(driver.getCurrentUrl().contains("transactions"));
+		}
+		public static void guestnav(WebDriver driver) {
+			WebElement Navbar = driver.findElement(By.id("ul_main_menu"));
+			WebElement Guestlink = Navbar.findElement(By.linkText("Guest Suggestions"));
+			Guestlink.click();
+			Assert.assertTrue(driver.getCurrentUrl().contains("guest"));
+		}
+
+		public static void login(WebDriver driver) {
+			WebElement Navbar = driver.findElement(By.id("ul_main_menu"));
+			WebElement Loginlink = Navbar.findElement(By.linkText("Login"));
+//			WebElement Homelink = Navbar.findElement(By.linkText("Home"));
+			Loginlink.click();
+			WebElement login = driver.findElement(By.name("login"));
+			WebElement password = driver.findElement(By.name("password"));
+			login.sendKeys("rlsmall56");
+			password.sendKeys("Levi56565656");
+			WebElement loginbtn = driver.findElement(By.name("login-submit"));
+			loginbtn.click();
+			// Need a handler here for invalid login
+	}
+		public static void logout(WebDriver driver) {
+			WebElement UserbarRt = driver.findElement(By.id("userbar_right"));
+			WebElement Logoutlink = UserbarRt.findElement(By.linkText("Logout"));
+			Logoutlink.click();
+		}
+}
